@@ -100,7 +100,7 @@
       "users": []
     }
   ],
-// 以下部分地方需要根据自己配置的信息进行修改//
+// outnound//
   "outbounds": [
     {
       "tag": "proxy",
@@ -108,9 +108,9 @@
       "outbounds": [
         "auto",
         "direct",
-        "SV1", // 修改名称1
-        "SV2", // 修改名称2
-        "SV3"  // 修改名称3
+        "SV1", //1
+        "SV2", //2
+        "SV3"  //3
 
       ]
     },
@@ -139,24 +139,23 @@
       "tag": "block"
     },
     {
-      "tag": "SV1", // 修改名称1
+      "tag": "SV1", //first node
       "type": "vless",
-      "server": "104.16.32.228", //优选ip或 域名
+      "server": "104.16.32.228", //
       "server_port": 8880,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //修改uuid
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //
       "packet_encoding": "xudp",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "   .WORKERS.DEV" //修改成自己host
-        },
+          "Host": "   " //
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
       }
     },
     {
-      "tag": "SV2", // 修改名称2
+      "tag": "SV2", //secondd node
       "type": "vless",
       "server": "104.16.142.237", //优选ip或 域名
       "server_port": 8880,
@@ -166,7 +165,7 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "  .WORKERS.DEV" //修改成自己host
+          "Host": " " //
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
@@ -174,17 +173,17 @@
     },
 
     {
-      "tag": "SV3", // 修改名称2
+      "tag": "SV3", //third node
       "type": "vless",
-      "server": "104.18.37.100", //优选ip或 域名
+      "server": "104.18.37.100", 
       "server_port": 8880,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //修改uuid
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", 
       "packet_encoding": "xudp",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "  .WORKERS.DEV" //修改成自己host
+          "Host": "  " //
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
