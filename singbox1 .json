@@ -203,7 +203,7 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "worker-dawn-dew-19b7-newrorker.pifago5240.WORKERS.DEV" //修改成自己host
+          "Host": "" //修改成自己host
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
