@@ -3,24 +3,25 @@
     "level": "debug",
     "timestamp": true
   },
- "dns": {
+  "dns": {
     "servers": [
       {
-        "tag": "alidns",
-        "address": "https://223.5.5.5/dns-query",
-        "address_strategy": "prefer_ipv4",
-        "strategy": "ipv4_only",
-        "detour": "direct"
+        "tag": "proxyDns",
+        "address": "tls://8.8.4.4/dns-query",
+        "detour": "proxy"
       },
       {
-        "tag": "doh",
-        "address": "https://https://rdu01.dnscry.pt/dns-query",
-        "strategy": "ipv4_only",
+        "tag": "localDns",
+        "address": "h3://1.1.1.1/dns-query ",
         "detour": "direct"
       },
       {
         "tag": "block",
         "address": "rcode://success"
+      },
+      {
+        "tag": "remote",
+        "address": "fakeip"
       }
     ],
     "rules": [
@@ -107,21 +108,16 @@
       "outbounds": [
         "auto",
         "direct",
-        "SV1", // 修改名称1
-        "SV2", // 修改名称2
-        "SV3", // 修改名称3
-        "SV4"  // 修改名称4
-
+        "SV1", // sv1
+        "SV2" // sv2
       ]
     },
     {
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "SV1", // 1
-        "SV2", // 2
-        "SV3",  // 3
-        "SV4"  // 4
+        "SV1", // sv1
+        "SV2" // sv2
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "1m",
@@ -140,76 +136,39 @@
       "tag": "block"
     },
     {
-      "tag": "SV1", // 1
+      "tag": "SV1", // sv1
       "type": "vless",
-      "server": "104.16.44.7", 
-      "server_port": 8880,
+      "server": "104.26.3.36", //优选ip或 域名
+      "server_port":80,
       "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //修改uuid
       "packet_encoding": "xudp",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "      " //
+          "Host": "    " //host
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
       }
     },
     {
-      "tag": "SV2", 
+      "tag": "SV2", //sv2
       "type": "vless",
-      "server": "172.64.150.239", 
-
-      "server_port": 8880,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", 
+      "server": "172.67.75.172",//
+      "server_port": 80,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //
       "packet_encoding": "xudp",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "       " //host
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048
-      }
-    },
-
-    {
-      "tag": "SV3",
-      "type": "vless",
-      "server": "162.159.129.11", 
-      "server_port": 8880,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //修改uuid
-      "packet_encoding": "xudp",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "      " //
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "max_early_data": 2048
-      }
-    },
-    {
-      "tag": "SV4", //
-      "type": "vless",
-      "server": "104.22.15.34", //优选ip或 域名
-      "server_port": 8880,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //修改uuid
-      "packet_encoding": "xudp",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "" //修改成自己host
+          "Host":  "     " //
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
       }
     }
-   
   ],
   "route": {
     "auto_detect_interface": true,
@@ -249,8 +208,7 @@
         ],
         "outbound": "direct"
       }
-    ],
-        "final" :"proxy" ,
-        "auto_detect_interface" :true
+    ]
+  }
   }
 }
