@@ -141,7 +141,7 @@
     {
       "tag": "SV1", //first node
       "type": "vless",
-      "server": "104.16.32.228", //
+      "server": "104.27.207.92", //
       "server_port": 8880,
       "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //
       "packet_encoding": "xudp",
@@ -175,7 +175,7 @@
     {
       "tag": "SV3", //third node
       "type": "vless",
-      "server": "104.18.37.100", 
+      "server": "104.26.7.89", 
       "server_port": 8880,
       "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", 
       "packet_encoding": "xudp",
