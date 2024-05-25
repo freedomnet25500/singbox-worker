@@ -100,7 +100,7 @@
       "users": []
     }
   ],
-//
+// 以下部分地方需要根据自己配置的信息进行修改//
   "outbounds": [
     {
       "tag": "proxy",
@@ -108,16 +108,16 @@
       "outbounds": [
         "auto",
         "direct",
-        "SV1", // sv1
-        "SV2" // sv2
+        "SV1", // 修改名称1
+        "SV2" // 修改名称2
       ]
     },
     {
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "SV1", // sv1
-        "SV2" // sv2
+        "SV1", // 修改名称1
+        "SV2" // 修改名称2
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "1m",
@@ -136,7 +136,7 @@
       "tag": "block"
     },
     {
-      "tag": "SV1", // sv1
+      "tag": "SV1", // 修改名称1
       "type": "vless",
       "server": "104.26.3.36", //优选ip或 域名
       "server_port":80,
@@ -146,24 +146,24 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "    " //host
+          "Host": " " //修改成自己host
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
       }
     },
     {
-      "tag": "SV2", //sv2
+      "tag": "SV2", // 修改名称2
       "type": "vless",
-      "server": "172.67.75.172",//
+      "server": "172.67.75.172",//优选ip或 域名
       "server_port": 80,
-      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4", //修改uuid
       "packet_encoding": "xudp",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host":  "     " //
+          "Host":  " " //修改成自己host
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
