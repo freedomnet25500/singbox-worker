@@ -146,7 +146,7 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": " " //修改成自己host
+          "Host": "HTTPS://AYDINGEEK.AYDINGEEK.WORKERS.DEV/" //修改成自己host
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
@@ -163,7 +163,7 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host":  " " //修改成自己host
+          "Host":  "HTTPS://AYDINGEEK.AYDINGEEK.WORKERS.DEV/" //修改成自己host
         },
         "early_data_header_name": "Sec-WebSocket-Protocol",
         "max_early_data": 2048
